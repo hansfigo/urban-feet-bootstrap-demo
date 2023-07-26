@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Produk</title>
+    <link rel="stylesheet" href="/style/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg bg-black fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Urban Feet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navtext">
+                    <li class="nav-item ">
+                        <a class="nav-link" aria-current="page" href="index.html" ;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="why.html">Why Us?</a>
+                    </li>
+                    <li class="nav-item  nav-active">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Tentang kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section x-data="{ sepatu: getSepatu() }" id="produk" class="py-5 d-flex justify-content-center align-items-center mt-5" style="min-height: 100vh;">
+        <div class="container">
+            <h1>Produk Kami</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus a facilis fugit quibusdam, voluptate amet
+                voluptatum tenetur officiis laudantium debitis. Voluptatum dignissimos delectus, nam incidunt recusandae
+                quos aperiam quae odit?</p>
+            <div class="row d-flex justify-content-center gap-5 pt-3">
+                <template x-for="e in sepatu">
+                    <div class="card" style="width: 18rem;">
+                        <img :src="e.thumbnail" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" x-text="e.title"></h5>
+                            <p x-text="e.description" class="card-text"></p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p>Copywrite © 2023 UrbanShoes.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+    <script src="js/script.js" />
+
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Urban Feet</title>
+    <link rel="stylesheet" href="/style/style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+    <nav id="navbar" class="navbar navbar-expand-lg bg-transparent fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white" href="#">Urban Feet</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 navtext">
+                    <li class="nav-item nav-active">
+                        <a class="nav-link" aria-current="page" href="index.html" ;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="why.html" >Why Us?</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">Tentang kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Kontak</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section style="height: 100vh;">
+        <div class="p-5 text-center bg-image hero-img">
+            <div class="mask"
+                style="background-color: rgba(0, 0, 0, 0.6); position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <div class="text-white">
+                        <h1 class="mb-3">UrbanFeet</h1>
+                        <h4 class="mb-3">Langkah Fashion Anda: Temukan Koleksi Sepatu Eksklusif Kami</h4>
+                        <a class="btn btn-outline-light btn-lg" href="#!" role="button">Explore</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light h-screen d-flex justify-content-center align-items-center">
+        <div class="container">
+            <h1 class="text-center">Kenapa Kami?</h1>
+            <div class="row pt-3">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center p-4 bg-white shadow-sm rounded">
+                        <i class="bi bi-shield-check h1 text-primary mb-4"></i>
+                        <h3 class="h5">Keamanan Terjamin</h3>
+                        <p class="text-muted">Kami menjamin kualitas dan keaslian setiap produk yang kami jual. Belanja
+                            dengan kami adalah aman dan terpercaya.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center p-4 bg-white shadow-sm rounded">
+                        <i class="bi bi-box h1 text-primary mb-4"></i>
+                        <h3 class="h5">Pilihan Luas</h3>
+                        <p class="text-muted">Temukan beragam pilihan sepatu dari merek terkemuka dan koleksi terbaru
+                            yang selalu diperbarui.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center p-4 bg-white shadow-sm rounded">
+                        <i class="bi bi-truck h1 text-primary mb-4"></i>
+                        <h3 class="h5">Pengiriman Cepat</h3>
+                        <p class="text-muted">Nikmati pengiriman cepat dan tepat waktu untuk memastikan sepatu favorit
+                            Anda tiba dengan sempurna.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section x-data="{ sepatu: getSepatu() }" id="produk" class="py-5 d-flex justify-content-center align-items-center">
+        <div class="container">
+            <h1>Produk Kami</h1>
+            <div class="row d-flex justify-content-between pt-3">
+                <template x-for="e in sepatu">
+                    <div class="card" style="width: 24rem;">
+                        <img :src="e.thumbnail" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title" x-text="e.title"></h5>
+                            <p x-text="e.description" class="card-text"></p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="py-5 bg-light h-screen d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Tentang Kami</h2>
+                    <p>Kami adalah tim yang bersemangat untuk memberikan pilihan sepatu berkualitas tinggi yang sesuai
+                        dengan gaya hidup modern Anda. Berdiri dengan bangga sebagai toko sepatu terkemuka, kami
+                        memiliki komitmen untuk memberikan pengalaman belanja yang unik dan penuh kepuasan kepada setiap
+                        pelanggan kami.</p>
+                </div>
+                <div class="col-md-6">
+                    <!-- Tambahkan gambar jika diinginkan -->
+                    <img src="https://www.blibli.com/friends-backend/wp-content/uploads/2022/12/B110681-cover-scaled.jpg"
+                        alt="Tentang Kami" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontak" class="py-5 h-screen d-flex justify-content-center align-items-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h2>Kontak</h2>
+                    <p>Hubungi kami untuk pertanyaan lebih lanjut.</p>
+                    <ul>
+                        <li>Email: info@tokosepatu.com</li>
+                        <li>Telepon: 123-456-7890</li>
+                        <li>Alamat: Jl. Pukis No. 123, Yogyakarta, Indonesia</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="name"
+                                placeholder="Nama Anda">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Email Anda">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Pesan Anda"></textarea>
+                          </div>
+                        <button type="submit" class="btn btn-primary">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-4 bg-dark text-light">
+        <div class="container text-center">
+            <p>Copywrite © 2023 UrbanShoes.</p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+
+
+    <script src="js/script.js"/>
+     
+
+    
+</body>
+
+</html>

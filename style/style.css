@@ -1,0 +1,32 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navtext li a{
+    color: rgb(92, 92, 92);
+}
+
+.navtext li a:hover {
+    color: rgb(207, 207, 207);
+}
+
+.nav-active a{
+    color: white !important; 
+}
+
+
+.hero-img {
+    background-image: url('https://wallpaperaccess.com/full/1076764.jpg');
+    height: 100vh;
+    background-size: cover;
+    position: relative;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.product-img {
+    max-width: 100%;
+    height: auto;
+}
