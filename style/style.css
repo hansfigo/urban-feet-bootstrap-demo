@@ -14,7 +14,6 @@ body {
     color: white !important; 
 }
 
-
 .hero-img {
     background-image: url('https://wallpaperaccess.com/full/1076764.jpg');
     height: 100vh;
@@ -23,10 +22,18 @@ body {
 }
 
 .h-screen {
-    height: 100vh;
+    height: auto;
+    margin-top: 32px;
 }
 
 .product-img {
     max-width: 100%;
     height: auto;
 }
+
+@media screen and (min-width: 720px) {
+    .h-screen {
+        height: 100vh;
+        margin-top: 0px;
+    }
+  }
