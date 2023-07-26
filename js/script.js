@@ -5,7 +5,7 @@ function checkScroll() {
     const navbar = document.getElementById("navbar");
     const scrollY = window.scrollY;
   
-    if (currentPage === '/urban-feet-bootstrap-demo/index.html') {
+    if (currentPage === '/urban-feet-bootstrap-demo/index.html' || currentPage === '/index.html') {
         if (scrollY > 0) {
             navbar.classList.add("bg-black");
             navbar.classList.remove("bg-transparent");
@@ -22,7 +22,7 @@ window.addEventListener("scroll", checkScroll);
 
 async function getSepatu() {
     let url;
-    if (currentPage === '/urban-feet-bootstrap-demo/products.html') {
+    if (currentPage === '/urban-feet-bootstrap-demo/products.html' || currentPage === '/products.html') {
         url = "https://dummyjson.com/products/search?q=shoes"
     }else{
         url = "https://dummyjson.com/products/category/mens-shoes?limit=3"
